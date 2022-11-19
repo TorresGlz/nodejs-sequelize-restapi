@@ -10,8 +10,8 @@ async function main() {
         /*await sequelize.authenticate(); //Intento de conexion y arranque de la bd
         console.log("Connection has been established succesfully.");*/
         await sequelize.sync({force: false})//Hace una sincronizacion con la base de datos, crea, elimina tablas,etc.('force:true'elimina la tabla y la vuelve a crear)
-        app.listen(3000);
-        console.log("Escuchando en puerto", 3000);
+        app.listen(4000);
+        console.log("Escuchando en puerto", 4000);
     }catch(error){
         console.error('Unable to connecto to the database:',error);
     }

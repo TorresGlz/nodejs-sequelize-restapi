@@ -5,5 +5,8 @@ import projectsRoutes from "./routes/projects.routes.js"; //importamos lo que co
 
 const app = express();
 
+
+//Dentro de express para recibir algo primero necesitamos middlewares
+app.use(express.json()); //Esto permitira  que cada vez que se envie un dato en formato json el servidor lo interpretara y lo guardara en un req.body
 app.use(projectsRoutes);
 export default app;

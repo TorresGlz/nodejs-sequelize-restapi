@@ -23,12 +23,12 @@ export const Project = sequelize.define("projects", { //Exportamos en una variab
 
 //To create a One-To-Many relationship, the hasMany and belongsTo associations are used together;
  
-Project.hasMany(Task,{ //Crearemos una relacion porque un 'Project' puede tener muchas 'Tasks'
-    foreingKey: 'projectId', //Creamos la columna desde Project y lo referenciamos a la id de 'Task'
-    sourceKey: 'id'
+Project.hasMany(Task,{ //Usamos la funcion hasMany porque un 'Project' puede tener muchas 'Tasks'
+    foreingKey: 'projectId', //Creamos la relacion desde Project y lo referenciamos a la id de 'Task'
+    sourceKey: 'id' //Con que columna lo va a enlazar
 });
 
-Task.belongsTo(Project,{
-    foreingKey: 'projectId',
-    targetId: 'id'
+Task.belongsTo(Project,{ //Se indica con la funcion belongsTo que muchas tareas le pertencen a un Projecto
+    foreingKey: 'projectId', //Es la realcion desde Task a Project
+    targetId: 'id' //Con que columna lo va enlazar
 })
